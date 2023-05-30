@@ -1,0 +1,6 @@
+/*.o
+/rust-os
+/kernel/target
+/kernel/Cargo.lock
+/.ccls-cache
+/compile_commands.json
