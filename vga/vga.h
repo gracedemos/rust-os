@@ -45,5 +45,9 @@ static inline uint16_t vga_entry(uint8_t c, uint8_t color) {
 struct Terminal terminal_init(void);
 void terminal_putchar(uint8_t c, struct Terminal* terminal);
 void terminal_clear(struct Terminal* terminal);
+void terminal_setcolor(enum VGAColor fg, enum VGAColor bg, struct Terminal* terminal);
+void terminal_setcursor(size_t x, size_t y, struct Terminal* terminal);
+void terminal_unsetcurosr(size_t x, size_t y, struct Terminal* terminal);
+void terminal_delete(struct Terminal* terminal);
 
 #endif

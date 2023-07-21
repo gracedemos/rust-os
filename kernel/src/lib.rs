@@ -2,15 +2,23 @@
 
 mod imports;
 mod terminal;
+mod ports;
+mod menu;
+mod shell;
+mod command;
 
 use core::panic::PanicInfo;
-use terminal::Terminal;
+
+use terminal::{Terminal, VGAColor};
+use menu::Menu;
 
 #[no_mangle]
 pub extern "C" fn kernel_main() -> ! {
     let terminal = Terminal::new();
-    terminal.println("hehe");
-    terminal.print("bruh");
+
+    let mut menu = Menu::new(&terminal);
+    menu.run();
+
     loop {}
 }
 
